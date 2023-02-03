@@ -5,7 +5,6 @@ namespace Database\Factories;
 use App\Models\Course;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
@@ -20,13 +19,15 @@ class GradeFactory extends Factory
     public function definition()
     {
         $score = fake()->numberBetween(0, 100);
+
         return [
             'user_id' => User::all()->random()->id,
             'course_id' => Course::all()->random()->id,
             'score' => $score,
-            'letter_grade' => $this->calculateLetterGrade($score)
+            'letter_grade' => $this->calculateLetterGrade($score),
         ];
     }
+
     private function calculateLetterGrade(int $score): string
     {
         return match (true) {
