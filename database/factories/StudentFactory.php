@@ -17,12 +17,14 @@ class StudentFactory extends Factory
      */
     public function definition()
     {
+        $firstname = fake()->firstName();
+        $lastname = fake()->lastName();
         return [
             'uuid' => fake()->uuid(),
             'nickname' => fake()->name(),
-            'firstname' => fake()->firstName(),
-            'lastname' => fake()->lastName(),
-            'email' => fake()->unique()->safeEmail(),
+            'firstname' => $firstname,
+            'lastname' => $lastname,
+            'email' => strtolower($firstname . '.' . $lastname . '@moodull.com'),
             'email_verified_at' => now(),
             'gender' => fake()->randomElement(['M', 'F']),
             'is_active' => fake()->randomElement([0, 1]),
