@@ -32,15 +32,18 @@ class DatabaseSeeder extends Seeder
         // TODO - find better way to do this
         // does insert into course_student table
         for ($i = 1; $i < 30; $i++) {
-            $course = Course::find(1); $course->students()->attach($i);
+            $course = Course::find(1);
+            $course->students()->attach($i);
         }
 
         for ($x = 10; $x < 20; $x++) {
-            $course = Course::find(2); $course->students()->attach($x);
+            $course = Course::find(2);
+            $course->students()->attach($x);
         }
 
         for ($x = 15; $x < 20; $x++) {
-            $course = Course::find(3); $course->students()->attach($x);
+            $course = Course::find(3);
+            $course->students()->attach($x);
         }
     }
 
@@ -49,15 +52,18 @@ class DatabaseSeeder extends Seeder
         // TODO - find better way to do this
         // does insert into course_student table
         for ($i = 1; $i < 3; $i++) {
-            $course = Course::find(1); $course->teachers()->attach($i);
+            $course = Course::find(1);
+            $course->teachers()->attach($i);
         }
 
         for ($x = 5; $x < 7; $x++) {
-            $course = Course::find(2); $course->teachers()->attach($x);
+            $course = Course::find(2);
+            $course->teachers()->attach($x);
         }
 
         for ($x = 15; $x < 20; $x++) {
-            $course = Course::find(3); $course->teachers()->attach($x);
+            $course = Course::find(3);
+            $course->teachers()->attach($x);
         }
     }
 }
