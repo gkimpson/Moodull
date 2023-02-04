@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('grades', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('student_id')->constrained();
             $table->foreignId('course_id')->constrained();
             $table->decimal('score', 5, 2);
             $table->string('letter_grade', 8)->nullable();

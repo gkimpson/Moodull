@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Course;
+use App\Models\Student;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -21,7 +22,7 @@ class GradeFactory extends Factory
         $score = fake()->numberBetween(0, 100);
 
         return [
-            'user_id' => User::all()->random()->id,
+            'student_id' => Student::all()->random()->id,
             'course_id' => Course::all()->random()->id,
             'score' => $score,
             'letter_grade' => $this->calculateLetterGrade($score),
