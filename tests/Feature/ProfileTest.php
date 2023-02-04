@@ -43,7 +43,7 @@ class ProfileTest extends TestCase
 //        $this->assertSame('test@example.com', $student->email);
 //        $this->assertNull($student->email_verified_at);
 //    }
-//
+
     public function test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
     {
         $student = Student::factory()->create();
