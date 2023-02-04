@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
+            $table->foreignId('department_id')->constrained();
             $table->enum('title', ['Mr', 'Mrs', 'Miss', 'Ms', 'Dr']);
             $table->string('firstname', 255);
             $table->string('lastname', 255);

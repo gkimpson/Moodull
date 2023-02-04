@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Department;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,11 +21,12 @@ class TeacherFactory extends Factory
 
         return [
             'uuid' => fake()->uuid(),
+            'department_id' => Department::all()->random()->id,
             'title' => $title,
             'firstname' => fake()->firstName(),
             'lastname' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
-            'gender' => $this->getGenderBasedOnTitle($title),  // TODO - make gender match up with title above (Mr, Mrs..)
+            'gender' => $this->getGenderBasedOnTitle($title),
         ];
     }
 
