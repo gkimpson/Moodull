@@ -21,7 +21,7 @@ class CourseFactory extends Factory
             'department_id' => Department::all()->random()->id,
             'name' => fake()->name,
             'description' => fake()->text(255),
-            'code' => fake()->text(8)
+            'code' => fake()->text(8),
         ];
     }
 }

@@ -22,6 +22,5 @@ class DatabaseSeeder extends Seeder
         Teacher::factory(50)->create();
         Grade::factory(50)->create();
         Course::factory(5)->create();
-
     }
 }
