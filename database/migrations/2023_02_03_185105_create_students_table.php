@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('nickname', 255);
             $table->string('email', 255)->unique();
             $table->enum('gender', ['M', 'F']);
-            $table->unsignedTinyInteger('is_active')->default(1);
+            $table->boolean('is_active')->default(1);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password', 255);
             $table->rememberToken();

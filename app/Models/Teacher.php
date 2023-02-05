@@ -9,12 +9,12 @@ class Teacher extends Model
 {
     use HasFactory;
 
-    public function department()
+    public function department(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Department::class);
     }
 
-    public function courses()
+    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Course::class);
     }

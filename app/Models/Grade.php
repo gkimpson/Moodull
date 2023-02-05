@@ -9,7 +9,7 @@ class Grade extends Model
 {
     use HasFactory;
 
-    public function student()
+    public function student(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Student::class);
     }

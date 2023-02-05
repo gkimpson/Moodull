@@ -43,12 +43,12 @@ class Student extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function grades()
+    public function grades(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Grade::class);
     }
 
-    public function courses()
+    public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Course::class);
     }
